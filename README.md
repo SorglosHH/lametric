@@ -12,11 +12,11 @@ Note:
 
 Sample setup inside the app:
 
-Url:	http://www.sample.de or https://www.sample.de or https://www.sample.de/path_to_script_folder
-Port:	optional for servers running on custom ports
-Name:	Leading text for your value of device (default: FHEM)
-Device:	Your fhem device to get state value from
-Icon:	Icon to display (default is i8919 when left empty)
-Seckey:	Your custom string which must be same inside fhem.php to get a result from script
-
+Url:	http://www.sample.de or https://www.sample.de or https://www.sample.de/path_to_script_folder<br>
+Port:	optional for servers running on custom ports<br>
+Name:	Leading text for your value of device (default: FHEM)<br>
+Device:	Your fhem device to get state value from<br>
+Icon:	Icon to display (default is i8919 when left empty)<br>
+Seckey:	Your custom string which must be same inside fhem.php to get a result from script<br>
+<br>
 Have fun!
