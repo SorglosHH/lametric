@@ -103,13 +103,15 @@ else {
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
 
-	    $data=$data.',{
-		"text": "'.$result1.'",';
-		if ($icon1 != ""){
-		    $data=$data.'"icon": "'.$icon1.'",';
-		}
-		$data=$data.'"index": 1
-	    }';
+	    if (($result1 != "") and ($result1 != "none")){
+		$data=$data.',{
+		    "text": "'.$result1.'",';
+		    if ($icon1 != ""){
+			$data=$data.'"icon": "'.$icon1.'",';
+		    }
+		    $data=$data.'"index": 1
+		}';
+	    }
 	}
 
 	# reading2
@@ -142,13 +144,15 @@ else {
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
 
-	    $data=$data.',{
-		"text": "'.$result2.'",';
-		if ($icon2 != ""){
-		    $data=$data.'"icon": "'.$icon2.'",';
-		}
-		$data=$data.'"index": 2
-	    }';
+	    if (($result2 != "") and ($result2 != "none")){
+		$data=$data.',{
+		    "text": "'.$result2.'",';
+		    if ($icon2 != ""){
+			$data=$data.'"icon": "'.$icon2.'",';
+		    }
+		    $data=$data.'"index": 2
+		}';
+	    }
 	}
 
 	# reading3
@@ -181,13 +185,15 @@ else {
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
 
-	    $data=$data.',{
-		"text": "'.$result3.'",';
-		if ($icon3 != ""){
-		    $data=$data.'"icon": "'.$icon3.'",';
-		}
-		$data=$data.'"index": 3
-	    }';
+	    if (($result3 != "") and ($result3 != "none")){
+		$data=$data.',{
+		    "text": "'.$result3.'",';
+		    if ($icon3 != ""){
+			$data=$data.'"icon": "'.$icon3.'",';
+		    }
+		    $data=$data.'"index": 3
+		}';
+	    }
 	}
 
 	# reading4
@@ -220,13 +226,15 @@ else {
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
 
-	    $data=$data.',{
-		"text": "'.$result4.'",';
-		if ($icon4 != ""){
-		    $data=$data.'"icon": "'.$icon4.'",';
-		}
-		$data=$data.'"index": 4
-	    }';
+	    if (($result4 != "") and ($result4 != "none")){
+		$data=$data.',{
+		    "text": "'.$result4.'",';
+		    if ($icon4 != ""){
+			$data=$data.'"icon": "'.$icon4.'",';
+		    }
+		    $data=$data.'"index": 4
+		}';
+	    }
 	}
 
 	# reading5
@@ -259,13 +267,15 @@ else {
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
 
-	    $data=$data.',{
-		"text": "'.$result5.'",';
-		if ($icon5 != ""){
-		    $data=$data.'"icon": "'.$icon5.'",';
-		}
-		$data=$data.'"index": 5
-	    }';
+	    if (($result5 != "") and ($result5 != "none")){
+		$data=$data.',{
+		    "text": "'.$result5.'",';
+		    if ($icon5 != ""){
+			$data=$data.'"icon": "'.$icon5.'",';
+		    }
+		    $data=$data.'"index": 5
+		}';
+	    }
 	}
 
         $data=$data.'	    ]
