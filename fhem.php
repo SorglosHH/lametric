@@ -106,7 +106,7 @@ else {
 	    if (($result1 != "") and ($result1 != "none")){
 		$data=$data.',{
 		    "text": "'.$result1.'",';
-		    if ($icon1 != ""){
+		    if (($icon1 != "")&& ($icon1 != "none")){
 			$data=$data.'"icon": "'.$icon1.'",';
 		    }
 		    $data=$data.'"index": 1
@@ -147,7 +147,7 @@ else {
 	    if (($result2 != "") and ($result2 != "none")){
 		$data=$data.',{
 		    "text": "'.$result2.'",';
-		    if ($icon2 != ""){
+		    if (($icon2 != "")&& ($icon2 != "none")){
 			$data=$data.'"icon": "'.$icon2.'",';
 		    }
 		    $data=$data.'"index": 2
@@ -188,7 +188,7 @@ else {
 	    if (($result3 != "") and ($result3 != "none")){
 		$data=$data.',{
 		    "text": "'.$result3.'",';
-		    if ($icon3 != ""){
+		    if (($icon3 != "")&& ($icon3 != "none")){
 			$data=$data.'"icon": "'.$icon3.'",';
 		    }
 		    $data=$data.'"index": 3
@@ -229,7 +229,7 @@ else {
 	    if (($result4 != "") and ($result4 != "none")){
 		$data=$data.',{
 		    "text": "'.$result4.'",';
-		    if ($icon4 != ""){
+		    if (($icon4 != "")&& ($icon4 != "none")){
 			$data=$data.'"icon": "'.$icon4.'",';
 		    }
 		    $data=$data.'"index": 4
@@ -270,7 +270,7 @@ else {
 	    if (($result5 != "") and ($result5 != "none")){
 		$data=$data.',{
 		    "text": "'.$result5.'",';
-		    if ($icon5 != ""){
+		    if (($icon5 != "")&& ($icon5 != "none")){
 			$data=$data.'"icon": "'.$icon5.'",';
 		    }
 		    $data=$data.'"index": 5
