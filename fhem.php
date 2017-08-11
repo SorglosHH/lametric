@@ -48,10 +48,7 @@ else {
     $reading2=$_GET['reading2'];
     $reading3=$_GET['reading3'];
     $reading4=$_GET['reading4'];
-    $icon1=$_GET['icon1'];
-    $icon2=$_GET['icon2'];
-    $icon3=$_GET['icon3'];
-    $icon4=$_GET['icon4'];
+    $reading5=$_GET['reading5'];
 
     # Failsave
     if ($name == false)
@@ -88,11 +85,26 @@ else {
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-	    $reading1 = trim(curl_exec($ch));
+	    $result1 = trim(curl_exec($ch));
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
+
+	    $ch = curl_init(); 
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading1."_icon%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+	    $icon1 = trim(curl_exec($ch));
+	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	    curl_close($ch);
+
 	    $data=$data.',{
-		"text": "'.$reading1.'",';
+		"text": "'.$result1.'",';
 		if ($icon1 != ""){
 		    $data=$data.'"icon": "'.$icon1.'",';
 		}
@@ -112,11 +124,26 @@ else {
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-	    $reading2 = trim(curl_exec($ch));
+	    $result2 = trim(curl_exec($ch));
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
+
+	    $ch = curl_init(); 
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading2."_icon%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+	    $icon2 = trim(curl_exec($ch));
+	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	    curl_close($ch);
+
 	    $data=$data.',{
-		"text": "'.$reading2.'",';
+		"text": "'.$result2.'",';
 		if ($icon2 != ""){
 		    $data=$data.'"icon": "'.$icon2.'",';
 		}
@@ -136,11 +163,26 @@ else {
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-	    $reading3 = trim(curl_exec($ch));
+	    $result3 = trim(curl_exec($ch));
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
+
+	    $ch = curl_init(); 
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading3."_icon%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+	    $icon3 = trim(curl_exec($ch));
+	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	    curl_close($ch);
+
 	    $data=$data.',{
-		"text": "'.$reading3.'",';
+		"text": "'.$result3.'",';
 		if ($icon3 != ""){
 		    $data=$data.'"icon": "'.$icon3.'",';
 		}
@@ -160,15 +202,69 @@ else {
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
-	    $reading4 = trim(curl_exec($ch));
+	    $result4 = trim(curl_exec($ch));
 	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	    curl_close($ch);
+
+	    $ch = curl_init(); 
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading4."_icon%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+	    $icon4 = trim(curl_exec($ch));
+	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	    curl_close($ch);
+
 	    $data=$data.',{
-		"text": "'.$reading4.'",';
+		"text": "'.$result4.'",';
 		if ($icon4 != ""){
 		    $data=$data.'"icon": "'.$icon4.'",';
 		}
 		$data=$data.'"index": 4
+	    }';
+	}
+
+	# reading5
+	if ($reading5 != ""){
+	    $ch = curl_init(); 
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22$reading5%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+	    $result5 = trim(curl_exec($ch));
+	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	    curl_close($ch);
+
+	    $ch = curl_init(); 
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading5."._icon%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+	    curl_setopt($ch, CURLOPT_POST, true);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	    curl_setopt($ch, CURLOPT_USERPWD, $username.':'.$password);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+	    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
+	    $icon5 = trim(curl_exec($ch));
+	    $returnCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	    curl_close($ch);
+
+	    $data=$data.',{
+		"text": "'.$result5.'",';
+		if ($icon5 != ""){
+		    $data=$data.'"icon": "'.$icon5.'",';
+		}
+		$data=$data.'"index": 5
 	    }';
 	}
 

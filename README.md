@@ -22,8 +22,8 @@ Device:	Your fhem device to get readings from<br>
 Icon:	Icon to display with announce text (default is i8919 when left empty)<br>
 Seckey:	Your custom string which must be same inside auth.php to get a result from script<br>
 <br>
-Reading 1-4:	readings to pick from fhem device<br>
-Icon 1-4:	icon to show with reading 1-4<br>
+Reading 1-5:	readings to pick from fhem device<br>
+Iocns:	Icons can now be set inside fhem. If reading is "myreading" than icon is tried to get from "myreading_iocn"!<br>
 <br>
 Have fun!
 <br><br>
