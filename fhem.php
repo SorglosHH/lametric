@@ -254,7 +254,7 @@ else {
 	    curl_close($ch);
 
 	    $ch = curl_init(); 
-	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading5."._icon%22,%22%22%29%7D&XHR=1");
+	    curl_setopt($ch, CURLOPT_URL, "https://127.0.0.1:8083/fhem&cmd=%7BReadingsVal%28%22$device%22,%22".$reading5."_icon%22,%22%22%29%7D&XHR=1");
 	    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
 	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 	    curl_setopt($ch, CURLOPT_POST, true);
