@@ -40,29 +40,57 @@ if (($username == "username") or ($password == "password")) {
 }
 else {
     # get device to check from app
-    $name=$_GET['name'];
-    $device=$_GET['device'];
-    $icon=$_GET['icon'];
-    $seckey=$_GET['seckey'];
-    $reading1=$_GET['reading1'];
-    $reading2=$_GET['reading2'];
-    $reading3=$_GET['reading3'];
-    $reading4=$_GET['reading4'];
-    $reading5=$_GET['reading5'];
 
-    # Failsave
-    if ($name == false)
+    if (isset($_GET['device'])){
+	$device=$_GET['device'];
+    }
+    if (isset($_GET['seckey'])){
+	$seckey=$_GET['seckey'];
+    }
+    if (isset($_GET['reading1'])){
+	$reading1=$_GET['reading1'];
+    }
+    else {
+	$reading1="";
+    }
+    if (isset($_GET['reading2'])){
+	$reading2=$_GET['reading2'];
+    }
+    else {
+	$reading2="";
+    }
+    if (isset($_GET['reading3'])){
+	$reading3=$_GET['reading3'];
+    }
+    else {
+	$reading3="";
+    }
+    if (isset($_GET['reading4'])){
+	$reading4=$_GET['reading4'];
+    }
+    else {
+	$reading4="";
+    }
+    if (isset($_GET['reading5'])){
+	$reading5=$_GET['reading5'];
+    }
+    else {
+	$reading5="";
+    }
+    if (!isset($_GET['name']))
     {
         $name="FHEM";
     }
-
-    if ($icon == false)
-    {
+    else {
+	$name=$_GET['name'];
+    }
+    if (!isset($_GET['icon'])){
         $icon="i8919";
     }
-
+    else {
+	$icon=$_GET['icon'];
+    }
     if ($seckey == $seckeycheck){
-
         $data='{
 	    "frames": [';
 
@@ -295,4 +323,5 @@ else {
 	print $data;
     }
 }
+
 ?>
